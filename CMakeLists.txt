@@ -11,3 +11,6 @@ set(CMAKE_INSTALL_PREFIX /usr/local)
 
 add_subdirectory(build)
 message("Building with version: ${ACETYL_NAMED_VERSION}")
+enable_testing()
+
+add_subdirectory(src)
