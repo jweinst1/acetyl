@@ -1,0 +1,4 @@
+#utils dir for acetyl#
+
+set(ACETYL_UTIL_DIR ${PROJECT_SOURCE_DIR}/utils)
+set(ACETYL_UTIL_DIR ${ACETYL_UTIL_DIR} PARENT_SCOPE)

@@ -22,6 +22,16 @@ typedef struct __acetyl_element {
 
 extern acetyl_elem_t* acetyl_elem_new(size_t amount);
 
+#define acetyl_ELEM_SET_KEY(elem, e_key) (strncpy(elem->key, e_key, ACETYL_ELEMENT_KEY_SIZE))
 extern void acetyl_elem_set_key(acetyl_elem_t* elem, const char* key);
+/**
+ * @brief Writes a string to the key of an elem with a given len.
+ * @warning Calling this function with a size higher than \c ACETYL_ELEMENT_KEY_SIZE will result
+ *          in an assert error.
+ */
+extern void acetyl_elem_write_key(acetyl_elem_t* elem, const char* key, unsigned len);
+
+#define acetyl_ELEM_IS_KEY(elem, e_key) (strncmp(elem->key, e_key, ACETYL_ELEMENT_KEY_SIZE))
+extern int acetyl_elem_is_key(acetyl_elem_t* elem, const char* key);
 
 #endif // ACETYL_ELEMENT_H
