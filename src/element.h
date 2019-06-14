@@ -31,7 +31,22 @@ extern void acetyl_elem_set_key(acetyl_elem_t* elem, const char* key);
  */
 extern void acetyl_elem_write_key(acetyl_elem_t* elem, const char* key, unsigned len);
 
-#define acetyl_ELEM_IS_KEY(elem, e_key) (strncmp(elem->key, e_key, ACETYL_ELEMENT_KEY_SIZE))
+#define acetyl_ELEM_IS_KEY(elem, e_key) (strncmp(elem->key, e_key, ACETYL_ELEMENT_KEY_SIZE) == 0)
+/**
+ * @brief Similar to the is_key macro but compares up to a smaller number of chars
+ *        than the max key size.
+ */
+#define acetyl_ELEM_IS_KEY_N(elem, e_key, len) (strncmp(elem->key, e_key, len) == 0)
 extern int acetyl_elem_is_key(acetyl_elem_t* elem, const char* key);
+/**
+ * @brief Checks if the type of an element is equal to \c e_type.
+ */
+#define ACETYL_ELEMENT_IS_TYPE(elem, e_type) ((elem)->type == e_type)
+/**
+ * @brief This function sets the value of an element.
+ * @details This function will set the value type and value data of an element.
+ *          if a type has no associated data, the \c data param should be \c NULL.
+ */
+//extern void acetyl_elem_set_value(acetyl_elem_t* elem, acetyl_elem_vtype_t type, void* data);
 
 #endif // ACETYL_ELEMENT_H

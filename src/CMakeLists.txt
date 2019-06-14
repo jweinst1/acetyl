@@ -5,6 +5,7 @@ set(ACETYL_SOURCE_DIR ${ACETYL_SOURCE_DIR})
 
 set(ACETYL_CORE_SOURCES 
    element.c
+   compound.c
 )
 
 add_library(acetyl_core STATIC ${ACETYL_CORE_SOURCES})

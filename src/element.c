@@ -24,3 +24,13 @@ extern int acetyl_elem_is_key(acetyl_elem_t* elem, const char* key)
 {
 	return strncmp(elem->key, key, ACETYL_ELEMENT_KEY_SIZE) == 0;
 }
+
+
+/*extern void acetyl_set_value(acetyl_elem_t* elem, acetyl_elem_vtype_t type, void* data)
+{
+	switch(type) {
+		case ACETYL_ELEM_V_NONE:
+		     elem->type = type;
+		     return;
+	}
+}*/
