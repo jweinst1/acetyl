@@ -1,0 +1,6 @@
+#ifndef ACETYL_TYPES_H
+#define ACETYL_TYPES_H
+
+@ACETYL_TYPES_BASE@
+
+#endif // ACETYL_TYPES_H

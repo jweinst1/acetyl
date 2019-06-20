@@ -14,4 +14,5 @@ message("Building with version: ${ACETYL_NAMED_VERSION}")
 enable_testing()
 
 add_subdirectory(utils)
-add_subdirectory(src)
+add_subdirectory(types)
+add_subdirectory(rx)

@@ -1,11 +1,13 @@
-#ifndef ACETYL_DATA_H
-#define ACETYL_DATA_H
+#ifndef ACETYL_TYPES_BASE_TYPES_H
+#define ACETYL_TYPES_BASE_TYPES_H
 
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-/**
- * @file This file contains functionality to deal with acetyl data types
- */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 typedef union __acetyl_data_value {
 	float _number;
@@ -20,4 +22,8 @@ typedef struct __acetyl_data {
 	acetyl_data_value_t value;
 } acetyl_data_t;
 
-#endif // ACETYL_DATA_H
+#ifdef __cplusplus
+}
+#endif
+
+#endif // ACETYL_TYPES_BASE_TYPES_H
