@@ -10,11 +10,12 @@ extern "C" {
 #endif
 
 typedef union __acetyl_data_value {
-	float _number;
+	int _bool;
 } acetyl_data_value_t;
 
 typedef enum __acetyl_data_type {
-	ACETYL_DATA_TYPE_NONE
+	ACETYL_DATA_TYPE_NONE,
+	ACETYL_DATA_TYPE_BOOL
 } acetyl_data_type_t;
 
 typedef struct __acetyl_data {
