@@ -5,6 +5,8 @@
                         (obj)->type = ACETYL_OBJ_TYPE_BOOL; \
                         (obj)->value._bool = state
 
+#define acetyl_bool_IS_BOOL(obj) ((obj)->type == ACETYL_OBJ_TYPE_BOOL)
+
 #ifdef __cplusplus
 extern "C" {
 #endif

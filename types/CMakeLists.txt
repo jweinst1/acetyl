@@ -12,6 +12,8 @@ set(ACETYL_TYPES_HEADER acetyl_types.h.in)
 
 file(READ ${ACETYL_TYPES_DIR}/acetyl_base_types.h ACETYL_TYPES_BASE)
 
+file(READ ${ACETYL_TYPES_DIR}/acetyl_none.h ACETYL_TYPES_NONE)
+
 file(READ ${ACETYL_TYPES_DIR}/acetyl_bool.h ACETYL_TYPES_BOOL)
 
 # This builds a single header to access all the types headers in one
