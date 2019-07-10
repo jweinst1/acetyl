@@ -81,6 +81,25 @@ void AcetylElement::clearId()
 		_id[i] = '\0';
 }
 
+bool AcetylElement::operator==(const AcetylElement& other) const
+{
+	if(std::strncmp(_id, other._id, ACETYL_ELEMENT_ID_MAX_CHARS) != 0)
+		return false;
+	if(other._type != _type)
+		return false;
+	switch(_type) {
+		case ACETYL_ELEM_TYPE_NONE:
+		    return true;
+		case ACETYL_ELEM_TYPE_NUMBER:
+		    return _number == other._number;
+		case ACETYL_ELEM_TYPE_JOINED:
+		    // Must be same address
+		    return _joined == other._joined;
+		case ACETYL_ELEM_TYPE_BOOL:
+		    return _boolean == other._boolean;
+	}
+}
+
 bool AcetylElement::boolean() const
 {
 	switch(_type) {
@@ -92,5 +111,19 @@ bool AcetylElement::boolean() const
 		    return false;
 		case ACETYL_ELEM_TYPE_JOINED:
 		    return _joined != nullptr;
+	}
+}
+
+double AcetylElement::number() const
+{
+	switch(_type) {
+		case ACETYL_ELEM_TYPE_BOOL:
+		    return _boolean ? 1.0 : 0.0;
+		case ACETYL_ELEM_TYPE_NONE:
+		    return 0.0;
+		case ACETYL_ELEM_TYPE_JOINED:
+		    return _joined == nullptr ? 0.0 : 1.0;
+		case ACETYL_ELEM_TYPE_NUMBER:
+		    return _number;
 	}
 }

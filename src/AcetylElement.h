@@ -43,7 +43,19 @@ public:
 
 	bool isId(const char* id) const { return std::strncmp(id, _id, ACETYL_ELEMENT_ID_MAX_CHARS) == 0; }
 
+	bool isType(AcetylElementType type) const { return type == _type; }
+	/**
+	 * @brief   Compares the id, type, and value of an element.
+	 * @remarks If only comparison of id or type is desired, do not use
+	 *          this method.
+	 */
+	bool operator==(const AcetylElement& other) const;
+
 	bool boolean() const;
+
+	double number() const;
+
+	AcetylElement* joiner() const { return _type == ACETYL_ELEM_TYPE_JOINED ? _joined : nullptr;  }
 
 private:
 	void clearId();

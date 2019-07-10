@@ -5,6 +5,7 @@ set(ACETYL_SRC_DIR ${ACETYL_SRC_DIR} PARENT_SCOPE)
 
 set(ACETYL_SRC_SOURCES 
     AcetylElement.cpp
+    AcetylCompound.cpp
 )
 
 add_library(acetylcore STATIC "${ACETYL_SRC_SOURCES}")
