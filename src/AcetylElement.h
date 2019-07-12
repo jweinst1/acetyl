@@ -20,7 +20,11 @@ enum AcetylElementType
 class AcetylElement
 {
 public:
+	/*Empty Id constructors*/
 	AcetylElement();
+	AcetylElement(bool boolean);
+	AcetylElement(double number);
+	AcetylElement(AcetylElement* joined);
 	AcetylElement(const char* id);
 	AcetylElement(const char* id, bool boolean);
 	AcetylElement(const char* id, double number);
@@ -56,6 +60,23 @@ public:
 	double number() const;
 
 	AcetylElement* joiner() const { return _type == ACETYL_ELEM_TYPE_JOINED ? _joined : nullptr;  }
+
+	void toBool(bool boolean) {
+		_type = ACETYL_ELEM_TYPE_BOOL;
+		_boolean = boolean;
+	}
+
+	void toNone() { _type = ACETYL_ELEM_TYPE_NONE; }
+
+	void toNumber(double number) {
+		_type = ACETYL_ELEM_TYPE_NUMBER;
+		_number = number;
+	}
+
+	void toJoined(AcetylElement* joined) {
+		_type = ACETYL_ELEM_TYPE_JOINED;
+		_joined = joined;
+	}
 
 private:
 	void clearId();

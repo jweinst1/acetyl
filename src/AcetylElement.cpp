@@ -5,6 +5,24 @@ AcetylElement::AcetylElement(): _type(ACETYL_ELEM_TYPE_NONE)
 	clearId();
 }
 
+AcetylElement::AcetylElement(bool boolean): _type(ACETYL_ELEM_TYPE_BOOL)
+{
+	clearId();
+	_boolean = boolean;
+}
+	
+AcetylElement::AcetylElement(double number): _type(ACETYL_ELEM_TYPE_NUMBER)
+{
+	clearId();
+	_number = number;
+}
+	
+AcetylElement::AcetylElement(AcetylElement* joined): _type(ACETYL_ELEM_TYPE_JOINED)
+{
+	clearId();
+	_joined = joined;
+}
+
 AcetylElement::AcetylElement(const char* id): _type(ACETYL_ELEM_TYPE_NONE)
 {
 	clearId();

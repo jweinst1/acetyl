@@ -1,7 +1,7 @@
 #ifndef SRC_ACETYL_RULE_H
 #define SRC_ACETYL_RULE_H
 
-#include <algorithm>
+#include "AcetylElement.h"
 
 enum AcetylRulePartType
 {
@@ -21,6 +21,7 @@ struct AcetylRulePart
 {
 	AcetylRulePartType type;
 	AcetylRulePartOp op;
+	AcetylElement value;
 };
 
 #endif
