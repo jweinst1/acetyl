@@ -1,7 +1,7 @@
 #ifndef SRC_ACETYL_ELEMENT_H
 #define SRC_ACETYL_ELEMENT_H
 
-#include <iostream>
+#include <algorithm>
 #include <cstring>
 
 #ifndef ACETYL_ELEMENT_ID_MAX_CHARS
@@ -61,7 +61,7 @@ public:
 
 	AcetylElement* joiner() const { return _type == ACETYL_ELEM_TYPE_JOINED ? _joined : nullptr;  }
 
-	void toBool(bool boolean) {
+	void toBoolean(bool boolean) {
 		_type = ACETYL_ELEM_TYPE_BOOL;
 		_boolean = boolean;
 	}

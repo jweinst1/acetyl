@@ -2,6 +2,7 @@
 #define SRC_ACETYL_RULE_H
 
 #include "AcetylElement.h"
+#include "AcetylCompound.h"
 
 enum AcetylRulePartType
 {
@@ -22,6 +23,14 @@ struct AcetylRulePart
 	AcetylRulePartType type;
 	AcetylRulePartOp op;
 	AcetylElement value;
+};
+
+
+class AcetylRule : public std::vector<AcetylRulePart>
+{
+public:
+	void addPart(AcetylRulePartType type, AcetylRulePartOp op, const char* id);
+	void addPart(AcetylRulePartType type, AcetylRulePartOp op, const char* id, bool boolean);
 };
 
 #endif
