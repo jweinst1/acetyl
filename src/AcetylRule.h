@@ -31,6 +31,8 @@ class AcetylRule : public std::vector<AcetylRulePart>
 public:
 	void addPart(AcetylRulePartType type, AcetylRulePartOp op, const char* id);
 	void addPart(AcetylRulePartType type, AcetylRulePartOp op, const char* id, bool boolean);
+	void addPart(AcetylRulePartType type, AcetylRulePartOp op, const char* id, double number);
+	void addPart(AcetylRulePartType type, AcetylRulePartOp op, const char* id, AcetylElement* joined);
 };
 
 #endif
