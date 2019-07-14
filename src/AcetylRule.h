@@ -23,6 +23,8 @@ struct AcetylRulePart
 	AcetylRulePartType type;
 	AcetylRulePartOp op;
 	AcetylElement value;
+
+	void setElement(const AcetylElement& elem) { value = elem; }
 };
 
 
